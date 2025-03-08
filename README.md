@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio and blog website built with Next.js 14 and Tailwind CSS. This minimalist design showcases my work, skills, and blog articles with elegant animations and a clean interface.
 
-![Next.js Portfolio & Blog](https://imgur.com/3ZakYVR)
+![Next.js Portfolio & Blog](https://batuhaneroglu.vercel.app)
 
 ## Features
 
