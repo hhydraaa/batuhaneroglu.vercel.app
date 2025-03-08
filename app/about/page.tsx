@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="space-y-12">
             <BlurIn>
               <section>
-                <h2 className="text-2xl font-bold mb-4">Hello, I'm Batuhan!</h2>
+                <h2 className="text-2xl font-bold mb-4">Hello, I&apos;m Batuhan!</h2>
                 <div className="prose prose-zinc dark:prose-invert">
                   <p className="mb-4">
                     I develop modern web technologies and user experience-focused software solutions. 

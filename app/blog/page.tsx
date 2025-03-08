@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '../context/LanguageContext';
 import FadeIn from '../components/animations/FadeIn';
-import BlurIn from '../components/animations/BlurIn';
 import AnimatedContent from '../components/animations/AnimatedContent';
 import { motion } from 'framer-motion';
 import { getAllBlogPosts } from '../lib/blog-client';
 import type { BlogPost } from '../lib/blog-client';
 
 export default function BlogPage() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
