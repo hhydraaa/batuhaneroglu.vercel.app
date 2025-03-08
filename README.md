@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Portfolio & Blog
+
+A modern, responsive personal portfolio and blog website built with Next.js 14 and Tailwind CSS. This minimalist design showcases my work, skills, and blog articles with elegant animations and a clean interface.
+
+![Next.js Portfolio & Blog](https://placeholder-for-screenshot.com/screenshot.jpg)
+
+## Features
+
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean, minimalist interface with smooth animations
+- **Portfolio Section**: Showcase your projects and skills
+- **Blog Platform**: Share your thoughts and expertise with a built-in blog
+- **About Page**: Tell visitors about yourself and your background
+- **Gallery**: Display visual content in an elegant gallery format
+- **Social Media Integration**: Connect with GitHub and Instagram
+- **Animations**: Beautiful page transitions and content animations using Framer Motion
+- **Performance Optimized**: Fast loading and rendering
+
+## Technologies Used
+
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **State Management**: React Hooks
+- **Content Rendering**: Markdown for blog posts
+- **Icons**: SVG icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 16.8.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/next-app-v3.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd next-app-v3
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Project Structure
+
+```
+next-app-v3/
+├── app/
+│   ├── about/                  # About page
+│   ├── blog/                   # Blog pages
+│   │   ├── [slug]/             # Individual blog post pages
+│   │   └── page.tsx            # Blog list page
+│   ├── components/             # Reusable components
+│   │   ├── animations/         # Animation components
+│   │   └── ...
+│   ├── context/                # React context providers
+│   ├── data/                   # Static data (blog posts, etc.)
+│   ├── gallery/                # Gallery page
+│   ├── lib/                    # Utility functions
+│   ├── portfolio/              # Portfolio pages
+│   ├── favicon.ico             # Site favicon
+│   ├── globals.css             # Global styles
+│   ├── layout.tsx              # Root layout
+│   └── page.tsx                # Home page
+├── public/                     # Static assets
+├── .gitignore
+├── next.config.js
+├── package.json
+├── README.md
+└── tailwind.config.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Home**: Introduction and recent works
+- **Portfolio**: Showcase of projects
+- **Blog**: Articles on web development and technology
+- **Gallery**: Visual content display
+- **About**: Personal information and skills
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Blog Features
 
-## Learn More
+- Markdown support for rich content
+- Categories for organization
+- Reading time estimation
+- Related posts
+- Publish dates
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Social Media Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit the footer component to update your social media links:
 
-## Deploy on Vercel
+```tsx
+// Update these links with your profiles
+<a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+  GitHub
+</a>
+<a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+  Instagram
+</a>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Blog Content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Blog posts are stored in JSON format in `app/data/blog-en.json`. Add new posts by appending to this file:
+
+```json
+{
+  "slug": "your-post-slug",
+  "title": "Your Post Title",
+  "date": "YYYY-MM-DD",
+  "excerpt": "Brief description of your post",
+  "category": "Category",
+  "author": "Your Name",
+  "readTime": "X min read",
+  "content": "# Your Markdown Content Here"
+}
+```
+
+## Deployment
+
+This project can be easily deployed to Vercel, Netlify, or any other hosting platform that supports Next.js:
+
+```bash
+# For Vercel
+vercel
+
+# For Netlify
+netlify deploy
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Next.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
+- Framer Motion for the animation library

@@ -1,73 +1,54 @@
 'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useLanguage } from "./context/LanguageContext";
-import FadeIn from "./components/animations/FadeIn";
-import BlurIn from "./components/animations/BlurIn";
-import AnimatedContent from "./components/animations/AnimatedContent";
+import { useState, useEffect } from 'react';
+import FadeIn from '../components/animations/FadeIn';
+import BlurIn from '../components/animations/BlurIn';
+import AnimatedContent from '../components/animations/AnimatedContent';
 
-export default function Home() {
-  const { t } = useLanguage();
+export default function GalleryPage() {
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const fullText = 'Coming Soon.';
+
+  useEffect(() => {
+    const handleTyping = () => {
+      setText(currentText => 
+        isDeleting 
+          ? fullText.substring(0, currentText.length - 1)
+          : fullText.substring(0, currentText.length + 1)
+      );
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(prev => prev + 1);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, isDeleting ? 50 : 150);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum]);
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
-      <main className="flex-grow container mx-auto px-4 pt-24 pb-16">
-        <div className="max-w-5xl mx-auto">
-          <AnimatedContent>
-            <div className="grid gap-20 md:grid-cols-2 items-center">
-              <FadeIn>
-                <div className="space-y-8">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-                    Batuhan Eroğlu
-                    <span className="block text-xl md:text-2xl font-normal mt-2 text-zinc-400">
-                      {t('home.title')}
-                    </span>
-                  </h1>
-                  
-                  <p className="text-lg text-zinc-300">
-                    {t('home.description')}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-4">
-                    <Link 
-                      href="/portfolio" 
-                      className="flex items-center justify-center h-12 px-6 font-medium rounded-md bg-white text-black hover:bg-zinc-200 transition-colors"
-                    >
-                      {t('home.cta.portfolio')}
-                    </Link>
-                    
-                    <Link 
-                      href="/about" 
-                      className="flex items-center justify-center h-12 px-6 font-medium rounded-md border border-zinc-700 hover:bg-zinc-900 transition-colors"
-                    >
-                      {t('home.cta.about')}
-                    </Link>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-            <FadeIn delay={0.4} className="mt-24 space-y-8">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                {t('home.recentWorks')}
-              </h2>
-              
-              <BlurIn delay={0.3}>
-                <div className="min-h-[25vh] flex items-center justify-center">
-                  <div className="text-center">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                      I don't have to much lol
-                      <span className="ml-1.5 inline-block w-[2px] h-6 bg-current animate-pulse"></span>
-                    </h2>
-                  </div>
-                </div>
-              </BlurIn>
-            </FadeIn>
-          </AnimatedContent>
-        </div>
-      </main>
-      
-      <footer className="border-t border-zinc-800 py-8 bg-black">
+      <div className="flex-grow">
+        <AnimatedContent>
+          <div className="min-h-[80vh] flex items-center justify-center">
+            <BlurIn>
+              <div className="text-center">
+                <h2 className="text-4xl sm:text-6xl font-bold mb-4 mt-8">
+                  {text}
+                  <span className="ml-1.5 inline-block w-[2px] h-8 bg-current animate-pulse"></span>
+                </h2>
+              </div>
+            </BlurIn>
+          </div>
+        </AnimatedContent>
+      </div>
+
+      <footer className="border-t border-zinc-800 py-8 bg-black mt-auto">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-zinc-400">

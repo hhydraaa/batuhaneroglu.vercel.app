@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "nextjs-15",
+    "title": "Next.js 15.0: New Features and Performance Improvements",
+    "date": "2025-02-20",
+    "excerpt": "Next.js 15.0 has arrived with innovations that are creating a lot of excitement in the web development world. Here are the key features and improvements in the latest version of this powerful framework.",
+    "category": "Web Development",
+    "author": "Batuhan Eroğlu",
+    "readTime": "5 min read",
+    "content": "# Next.js 15.0: New Features and Performance Improvements\n\nNext.js 15.0 has arrived with innovations that are creating a lot of excitement in the web development world. Here are the key features and improvements in the latest version of this powerful framework.\n\n## Turbopack: Faster Compilation Times\n\nOne of the most notable improvements in Next.js 15.0 is that Turbopack is now stable. Written in Rust, Turbopack runs 10 times faster than webpack and significantly improves the local development experience. This means significant gains in compilation times for developers working on large projects.\n\n```javascript\n// next.config.js - To enable Turbopack:\nmodule.exports = {\n  experimental: {\n    turbo: true\n  }\n}\n```\n\nThe advantages of Turbopack include:\n- Incredibly fast compilation times\n- Smart caching\n- Only compiles files that change\n- Lower memory usage\n\n## React Server Components: Full Integration\n\nReact Server Components (RSC) are now at the heart of Next.js. This technology seamlessly combines server-rendered components with interactive client-side components. As a result, initial loading times are accelerated and the user experience is improved. With Next.js 15.0, you can take advantage of the full potential of RSC.\n\n## Conclusion: Next.js Is Ready for the Future\n\nNext.js 15.0 offers a more powerful, faster, and more useful framework for modern web development. With new features and performance improvements, Next.js makes web developers' daily workflows more efficient. If you haven't switched to Next.js 15.0 yet, we highly recommend giving it a try."
+  },
+  {
+    "slug": "react-19",
+    "title": "React 19: The New Features You Should Use",
+    "date": "2025-01-28",
+    "excerpt": "React 19 brings revolutionary innovations to the modern web development ecosystem. In this article, we will discuss the features that React 19 offers and that you should start using right away.",
+    "category": "JavaScript",
+    "author": "Batuhan Eroğlu",
+    "readTime": "4 min read",
+    "content": "# React 19: The New Features You Should Use\n\nReact 19 brings revolutionary innovations to the modern web development ecosystem. In this article, we will discuss the features that React 19 offers and that you should start using right away.\n\n## Enhanced Concurrent Rendering\n\nReact 19 takes Concurrent Rendering capabilities even further. Now long processes can run in the background without blocking the user interface, greatly improving the user experience. With the new useTransition hook, you can more easily manage complex state updates.\n\n## Automatic Memoization\n\nOne of the most exciting innovations in React 19 is the automatic memoization feature. Now, without the need to use React.memo, useMemo, or useCallback, React intelligently optimizes your components and calculations. This means both increased performance and cleaner code.\n\n## Conclusion: Get Ready for the Future with React 19\n\nReact 19 is shaping the future of modern web application development. The features we mentioned above are just some of the innovations that React 19 offers. To take advantage of the full potential of this powerful framework, you can start using these features in your projects starting today."
+  },
+  {
+    "slug": "web-performance-2025",
+    "title": "Web Performance: What to Watch Out for in 2025",
+    "date": "2025-01-10",
+    "excerpt": "In 2025, web performance plays a more critical role in user experience than ever before. In this article, we will discuss the factors you need to pay attention to in order to optimize performance in modern web applications.",
+    "category": "Web Performance",
+    "author": "Batuhan Eroğlu",
+    "readTime": "6 min read",
+    "content": "# Web Performance: What to Watch Out for in 2025\n\nIn 2025, web performance plays a more critical role in user experience than ever before. In this article, we will discuss the factors you need to pay attention to in order to optimize performance in modern web applications.\n\n## Core Web Vitals 3.0: New Metrics\n\nGoogle updated Core Web Vitals metrics in 2025, adding new measurements. Now, in addition to Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS) metrics, Interaction to Next Paint (INP), which measures interaction quality, and Memory Usage (MU), which monitors memory usage, are also of great importance.\n\n## Quantum JavaScript: Faster Execution\n\nIn 2025, browsers made significant improvements to JavaScript engines. These new generation engines, called \"Quantum JavaScript,\" can process code in parallel and run 3 times faster than traditional JavaScript engines.\n\n## Conclusion: Performance Is More Important Than Ever\n\nIn 2025, web performance has become one of the most critical components of user experience and SEO. By taking into account the factors we mentioned above and continuously monitoring your performance metrics, you can ensure that your application remains fast, efficient, and user-friendly."
+  }
+] 

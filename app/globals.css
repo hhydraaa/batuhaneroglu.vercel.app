@@ -1,26 +1,95 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #ffffff;
+  --secondary: #a3a3a3;
+  --accent: #d4d4d4;
+  --muted: #171717;
+  --border: #262626;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  min-height: 100vh;
+}
+
+/* SVG ikon boyutları için özel sınıflar */
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Animasyon sınıfları */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-blur-in {
+    animation: blurIn 0.7s ease-out forwards;
+  }
+
+  .language-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .language-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .language-enter-active,
+  .language-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .language-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .language-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
